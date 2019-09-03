@@ -1,0 +1,168 @@
+			@font-face {
+				font-family: myFirst;
+				src: url(OpenSans-Light.ttf)
+			}
+			@font-face {
+				font-family: myFirstBold;
+				src: url(BebasNeue-Bold.ttf)
+			}
+			.bebasFont {font-family: myFirstBold;}
+            
+			/*body {
+				margin: 0;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				min-height: 100vh;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+			}*/
+			/*main {
+				-webkit-box-flex: 1 0 auto;
+				-moz-box-flex: 1 0 auto;
+				-webkit-flex: 1 0 auto;
+				-ms-flex: 1 0 auto;
+				flex: 1 0 auto;
+				padding-left: 300px;
+			}*/
+			
+			.sticky {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 100;
+			}
+			.sticky + .content {
+				padding-top: 102px
+			}
+			.search_sidenav, .loginregister_box {
+				height: 100%;
+				width: 100%;
+				position: fixed;
+				top: 0;
+				right: 0;
+				background-color: white;
+				overflow-x: hidden;
+				/*transition: 0.5s;*/
+				z-index: 20000;
+			}
+			.search_sidenav .closebtn, .loginregister_box .closebtn {
+				position: absolute;
+				top: 0;
+				font-size: 50px;
+				left: 50%;
+			}
+			.inputfile {
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				overflow: hidden;
+				position: absolute;
+				z-index: -1;
+			}
+			.fa-thumbs-up, .fa-thumbs-down, .fa-comment, .fa-share, #comment_image + label {
+				cursor: pointer;
+			}
+			#contact_website {display: none;}
+			.alertBox {
+				padding: 20px;
+				background-color: #f44336;
+				color: white;
+			}
+			.successBox {
+				padding: 20px;
+				background-color: green;
+				color: white;
+			}
+			.alertBoxCloseBtn {
+				margin-left: 15px;
+				color: white;
+				font-weight: bold;
+				float: right;
+				font-size: 22px;
+				line-height: 20px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.alertBoxCloseBtn:hover {
+				color: black;
+			}
+			.card a.red-text {
+				white-space: pre-wrap;
+				white-space: -moz-pre-wrap;
+				white-space: -pre-wrap;
+				white-space: -o-pre-wrap;
+				word-wrap: break-word;
+			}
+			#comment_image + label:hover {
+				color: red;
+			}
+			.comment {display: flex;}
+			.comment.author-comment {justify-content: flex-end;}
+			.comment.author-comment .info {order: 3;}
+			.comment.author-comment .avatar {order: 2;}
+			.comment.author-comment p {order: 1;}
+			* {
+				box-sizing: border-box;
+			}
+			.flex-container {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-moz-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-moz-box-direction: normal;
+				-ms-flex-direction: row;
+				-webkit-flex-direction: row;
+				flex-direction: row;
+				-ms-flex-wrap: wrap;
+				-webkit-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-ms-justify-content: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+			}
+			.flex-item {
+				-webkit-box-flex: 0 0 96%;
+				-moz-box-flex: 0 0 96%;
+				-ms-flex: 0 0 96%;
+				-webkit-flex: 0 0 96%;
+				flex: 0 0 96%;
+				margin: 5px;
+			}
+
+			@media (max-width: 800px){
+				.comment.user-comment .info {
+					order: 3;
+				}
+				.comment.user-comment .avatar {
+					order: 2;
+				}
+				.comment.user-comment p {
+					order: 1;
+				}
+				.comment p {
+					width: 100%;
+				}
+				.comment.author-comment {
+					justify-content: flex-start;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				.flex-container {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+				.flex-item {
+					flex: 1 0 96%;
+					margin: 5px;
+				}
+			}
