@@ -61,5 +61,5 @@ define('ADD_JOB', 1);
 define('REMOVE_JOB', 2);
 
 // Random value used for hashing
-define('HASH_PREFIX', 'K1-');
+define('HASH_PREFIX', 'xxxx');
 ?>
