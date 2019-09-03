@@ -1,0 +1,12 @@
+[10-Aug-2019 22:22:26 Africa/Lagos] PHP Fatal error:  Cannot redeclare FirstPage::$mLinkToAllJobsUrl in /home/jobstack/public_html/presentation/first_page.php on line 24
+[15-Aug-2019 10:07:37 Africa/Lagos] PHP Parse error:  syntax error, unexpected end of file in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 876
+[15-Aug-2019 10:07:42 Africa/Lagos] PHP Parse error:  syntax error, unexpected end of file in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 876
+[15-Aug-2019 10:08:44 Africa/Lagos] PHP Parse error:  syntax error, unexpected end of file in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 876
+[15-Aug-2019 10:09:01 Africa/Lagos] PHP Parse error:  syntax error, unexpected end of file in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 876
+[15-Aug-2019 10:09:20 Africa/Lagos] PHP Parse error:  syntax error, unexpected end of file in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 876
+[15-Aug-2019 10:40:02 Africa/Lagos] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/jobstack/public_html/business/database_handler.php on line 70
+[15-Aug-2019 10:41:01 Africa/Lagos] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/jobstack/public_html/business/error_handler.php on line 67
+[15-Aug-2019 10:41:35 Africa/Lagos] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/jobstack/public_html/business/database_handler.php on line 70
+[15-Aug-2019 10:43:01 Africa/Lagos] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/jobstack/public_html/business/database_handler.php on line 70
+[15-Aug-2019 11:19:17 Africa/Lagos] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 197
+[15-Aug-2019 11:19:22 Africa/Lagos] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' in /home/jobstack/public_html/presentation/templates/job_details_tpl.php on line 197

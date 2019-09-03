@@ -1,0 +1,112 @@
+<!--
+        	<br>
+			<div class="divider"></div>
+			<br>
+			<div class="card white">
+			    <div class="card-content grey-text text-darken-2">
+			        <div class="row">
+						<div class="col s12 center">
+						    <div class="card white z-depth-0">
+		                        <div class="card-content grey-text text-darken-2">
+							    <img src="'.$job_details->mLinkToLogo.'" alt="JobStack Logo" class="center" style="height:200px;width:200px">
+							    </div>
+							</div>
+						</div>
+					</div>
+            		<div class="row row_first" style="display:none">
+            			<div class="col s12">
+            				<div class="alertBox">
+            					Full Name field cannot be empty.
+            				</div>
+            			</div>
+            		</div>
+            		<div class="row row_email" style="display:none">
+            			<div class="col s12">
+            				<div class="alertBox">
+            					Email field cannot be empty.
+            				</div>
+            			</div>
+            		</div>
+            		<div class="row row_bad_email" style="display:none">
+            			<div class="col s12">
+            				<div class="alertBox">
+            					Inserted email is in wrong format.
+            				</div>
+            			</div>
+            		</div>
+            		<div class="row row_success" style="display:none">
+            			<div class="col s12">
+            				<div class="successBox">
+            					Your account has been made, <br /> please verify it by clicking the activation link that has been sent to your email.
+            				</div>
+            			</div>
+            		</div>
+			        <h6 class="teal-text center">Join over 2,384 other potential employees / entrepreneurs who receive free email updates</h6>
+			        <br>
+			        <div class="row">
+			            <form class="col s12">
+			                <div class="row">
+			                    <div class="input-field col s12">
+                                  <input id="full_name" type="text" name="full_name" placeholder="ie: Ugochukwu Oguejiofor">
+                                  <span class="helper-text">Important</span>
+                                  <label for="full_name">Full Name</label>
+                                </div>
+			                </div>
+			                <div class="row">
+			                    <div class="input-field col s12">
+                                  <input id="email" type="email" name="email" class="validate" placeholder="ie: johndoe@example.com">
+                                  <span class="helper-text">Important</span>
+                                  <label for="email">Email</label>
+                                </div>
+			                </div>
+			                <input type="text" id="contact_website" name="website">
+			                <div class="row">
+			                    <div class="col s12">
+			                        <a href="#!" class="btn red lighten-2 white-text" id="subscribeIndividual">Join us</a>
+			                    </div>
+			                </div>
+			            </form>
+			        </div>
+			        <div class="row">
+			            <div class="col s12">
+			            <small class="teal-text">We hate spam as much as you! Unsubscribe any time.</small>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<script>
+			    $(document).ready(function() {
+			         function validateEmail($email) {
+                      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                      return emailReg.test( $email );
+                    }
+                    
+			        $("#subscribeIndividual").click(function(event){
+			            event.preventDefault();
+			            if ($("#full_name").val() == "") {
+			                $(".row_first").show();
+					        return;
+			            }
+			            if ($("#email").val() == "") {
+			                $(".row_email").show();
+					        return;
+			            }
+			            
+			            var subscribe_email = $("#email").val().replace(/<[^>]*>?/gm);
+			            var subscribe_name = $("#full_name").val().replace(/<[^>]*>?/gm);
+			            
+			            if(!validateEmail(subscribe_email)) {
+			                $(".row_bad_email").show();
+					        return;
+			            }
+			            
+			            $.post(
+			                "'.$job_details->mLinkToJobDetails.'",
+			                {Subscribe: "", FullName: subscribe_name, Email: subscribe_email},
+			                function(data) {
+			                    $(".row_success").show();
+			                }
+			            );
+			        });
+			    });
+			</script>-->

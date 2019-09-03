@@ -1,0 +1,160 @@
+<IfModule mod_rewrite.c>
+# Enable mod_rewrite
+RewriteEngine On
+# Specify the folder in which the application resides.
+# Use / if the application is in the root.
+RewriteBase /
+
+#301 redirect
+RewriteCond %{HTTP_HOST} !^www\.jobstack\.com\.ng
+RewriteRule ^(.*)$ https://www.jobstack.com.ng/$1 [R=301,L]
+
+# Rewrite URLs ending in /index.php or /index.html to /
+RewriteCond %{THE_REQUEST} ^GET\ .*/index\.(php|html?)\ HTTP
+RewriteRule ^(.*)index\.(php|html?)$ $1 [R=301,L]
+
+# Rewrite All Jobs pages
+RewriteRule ^.*all-jobs/page-([0-9]+)/?$ index.php?Jobs&Page=$1 [L]
+RewriteRule ^.*all-jobs/?$ index.php?Jobs [L]
+
+# Rewrite Today's Jobs pages
+RewriteRule ^.*today-jobs/page-([0-9]+)/?$ index.php?TodayJobs&Page=$1 [L]
+RewriteRule ^.*today-jobs/?$ index.php?TodayJobs [L]
+
+# Rewrite Yesterday's Jobs pages
+RewriteRule ^.*yesterday-jobs/page-([0-9]+)/?$ index.php?YesterdayJobs&Page=$1 [L]
+RewriteRule ^.*yesterday-jobs/?$ index.php?YesterdayJobs [L]
+
+# Rewrite This week's Jobs pages
+RewriteRule ^.*this-week-jobs/page-([0-9]+)/?$ index.php?ThisWeekJobs&Page=$1 [L]
+RewriteRule ^.*this-week-jobs/?$ index.php?ThisWeekJobs [L]
+
+# Rewrite Last Thirty Days Jobs pages
+RewriteRule ^.*last-thirty-days-jobs/page-([0-9]+)/?$ index.php?LastThirtyDaysJobs&Page=$1 [L]
+RewriteRule ^.*last-thirty-days-jobs/?$ index.php?LastThirtyDaysJobs [L]
+
+# Rewrite jobs beloonging to location pages 'jobs-in-'. $location_name . '-bl' . $id . '/'
+RewriteRule ^.*jobs-in-(.*)-bl([0-9]+)/page-([0-9]+)/?$ index.php?JobsBelongingToLocation=$1&LocationId=$2&Page=$3 [L]
+RewriteRule ^.*jobs-in-(.*)-bl([0-9]+)/?$ index.php?JobsBelongingToLocation=$1&LocationId=$2 [L]
+
+# Rewrite jobs beloonging to company pages 'jobs-in-'. $company_name . '-bl' . $id . '/'
+RewriteRule ^.*jobs-in-(.*)-bc([0-9]+)/page-([0-9]+)/?$ index.php?JobsBelongingToCompany=$1&CompanyId=$2&Page=$3 [L]
+RewriteRule ^.*jobs-in-(.*)-bc([0-9]+)/?$ index.php?JobsBelongingToCompany=$1&CompanyId=$2 [L]
+
+# Rewrite All Companies pages
+RewriteRule ^.*all-companies/page-([0-9]+)/?$ index.php?Companies&Page=$1 [L]
+RewriteRule ^.*all-companies/?$ index.php?Companies [L]
+
+# Rewrite subpages of the home page
+RewriteRule ^page-([0-9]+)/?$ index.php?Page=$1 [L]
+
+# Rewrite job details pages
+RewriteRule ^.*-j([0-9]+)/?$ index.php?JobId=$1 [L]
+
+# Rewrite user profile pages
+RewriteRule ^.*-u([0-9]+)/?$ index.php?UserProfile=$1 [L]
+RewriteRule ^.*-u([0-9]+)/my-posts-(y)/?$ index.php?UserProfile=$1&MyPosts=$2 [L]
+RewriteRule ^.*-u([0-9]+)/my-posts-(y)/page-([0-9]+)/?$ index.php?UserProfile=$1&MyPosts=$2&Page=$3 [L]
+RewriteRule ^.*-u([0-9]+)/liked-posts-(y)/?$ index.php?UserProfile=$1&LikedPosts=$2 [L]
+RewriteRule ^.*-u([0-9]+)/liked-posts-(y)/page-([0-9]+)/?$ index.php?UserProfile=$1&LikedPosts=$2&Page=$3 [L]
+RewriteRule ^.*-u([0-9]+)/about-(y)/?$ index.php?UserProfile=$1&About=$2 [L]
+
+# Rewrite post details pages
+RewriteRule ^.*-u([0-9]+)-p([0-9]+)/?$ index.php?UserId=$1&PostId=$2 [L]
+
+# Rewrite company details pages
+RewriteRule ^.*-c([0-9]+)/?$ index.php?CompanyId=$1 [L]
+RewriteRule ^.*-c([0-9]+)/page-([0-9]+)/?$ index.php?CompanyId=$1&Page=$2 [L]
+
+
+# Redirect search results
+RewriteRule ^search-results/find-(.*)/all-words-(on|off)/company-search-(on|off)/?$ index.php?SearchResults&SearchString=$1&AllWords=$2&CompanySearch=$3 [L]
+RewriteRule ^search-results/find-(.*)/all-words-(on|off)/company-search-(on|off)/page-([0-9]+)/?$ index.php?SearchResults&SearchString=$1&AllWords=$2&CompanySearch=$3&Page=$4 [L]
+RewriteRule ^search-results/find-?(.*)/all-words-(on|off)/?$ index.php?SearchResults&SearchString=$1&AllWords=$2&Page=1 [L]
+
+# Rewrite cart details pages
+RewriteRule ^cart-details/?$ index.php?CartAction [L]
+RewriteRule ^cart-details/page-([0-9]+)/?$ index.php?CartAction&Page=$1 [L]
+
+# Rewrite login page
+RewriteRule ^login/?$ index.php?Login [L]
+
+# Rewrite user terms page
+RewriteRule ^user-terms/?$ index.php?UserTerms [L]
+
+# Rewrite privacy policy page
+RewriteRule ^privacy-policy/?$ index.php?PrivacyPolicy [L]
+
+# Rewrite career service page
+RewriteRule ^cvs-applications-linkedin-profiles/?$ index.php?CareerService [L]
+
+# Rewrite cv page
+RewriteRule ^cvs/?$ index.php?CVS [L]
+
+# Rewrite cover letter page
+RewriteRule ^cover-letters/?$ index.php?CoverLetters [L]
+
+# Rewrite linkedin profile page
+RewriteRule ^linkedin-profile/?$ index.php?LinkedinProfile [L]
+
+# Rewrite career service applications page
+RewriteRule ^applications/?$ index.php?Applications [L]
+
+# Rewrite post a user job page
+RewriteRule ^user-job-post/?$ index.php?UserJobPost [L]
+
+# Rewrite contact developer page
+RewriteRule ^contact-developer/?$ index.php?ContactDeveloper [L]
+
+# Rewrite register customer pages
+RewriteRule ^register-customer/?$ index.php?RegisterCustomer [L]
+
+# Rewrite account details pages
+RewriteRule ^edit-profile/?$ index.php?EditProfile [L]
+
+# Rewrite trending chatter pages
+RewriteRule ^trending-chatter/?$ index.php?TrendingChatter [L]
+RewriteRule ^trending-chatter/page-([0-9]+)/?$ index.php?TrendingChatter&Page=$1 [L]
+
+# Rewrite popular tags pages
+RewriteRule ^popular-tags-([0-9]+)/?$ index.php?PopularTags=$1 [L]
+RewriteRule ^popular-tags-([0-9]+)/page-([0-9]+)/?$ index.php?PopularTags=$1&Page=$2 [L]
+
+# Rewrite more job reviews pages
+RewriteRule ^more-job-reviews-([0-9]+)/?$ index.php?MoreJobReviews=$1 [L]
+RewriteRule ^more-job-reviews-([0-9]+)/page-([0-9]+)/?$ index.php?MoreJobReviews=$1&Page=$2 [L]
+
+# Rewrite more company reviews pages
+RewriteRule ^more-company-reviews-([0-9]+)/?$ index.php?MoreCompanyReviews=$1 [L]
+RewriteRule ^more-company-reviews-([0-9]+)/page-([0-9]+)/?$ index.php?MoreCompanyReviews=$1&Page=$2 [L]
+
+# Set the default 500 page for Apache errors
+ErrorDocument 500 /500.php
+
+# Set the default 404 page
+ErrorDocument 404 /404.php
+
+</IfModule>
+
+<IfModule mod_headers.c>
+<FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+</IfModule>
+<IfModule mod_mime.c>
+# Web fonts
+AddType application/font-woff woff
+AddType application/vnd.ms-fontobject eot
+
+# Browsers usually ignore the font MIME types and sniff the content,
+# however, Chrome shows a warning if other MIME types are used for the
+# following fonts.
+AddType application/x-font-ttf ttc ttf
+AddType font/opentype otf
+
+# Make SVGZ fonts work on iPad:
+# https://twitter.com/FontSquirrel/status/14855840545
+AddType     image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+</IfModule>

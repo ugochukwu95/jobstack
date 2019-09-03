@@ -1,0 +1,20 @@
+User-agent: *
+
+Disallow: /admin.php/
+Disallow: /cart-details/
+Disallow: /login/
+Disallow: /user-terms
+Disallow: /privacy-policy
+Disallow: /contact-developer
+Disallow: /edit-profile/
+Disallow: /*?Search
+Disallow: /search-results/find*
+Disallow: /register-customer
+
+Allow: /styles/jobstack-styles.css/
+Allow: /*-j*/
+Allow: /*-u*-p*/
+Allow: /*-c*/
+
+
+Sitemap: https://jobstack.com.ng/sitemap.xml
