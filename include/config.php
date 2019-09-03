@@ -22,7 +22,7 @@ define('ERROR_TYPES', E_ALL);
 
 // Settings about mailing the error messages to admin
 define('SEND_ERROR_MAIL', true);
-define('ADMIN_ERROR_MAIL', 'ugo.oguejiofor95@gmail.com');
+define('ADMIN_ERROR_MAIL', 'xxxxx');
 define('SENDMAIL_FROM', 'Errors@jobstack.com.ng');
 ini_set('sendmail_from', SENDMAIL_FROM);
 
@@ -35,14 +35,11 @@ define('SITE_GENERIC_ERROR_MESSAGE', '<h1>Jobstack Error!</h1>');
 // Database connectivity setup
 define('DB_PERSISTENCY', 'true');
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'jobstack_jobstack');
-define('DB_PASSWORD', 'Franc1smary@');
-define('DB_DATABASE', 'jobstack_jobstack');
+define('DB_USERNAME', 'xxxx');
+define('DB_PASSWORD', 'xxxx');
+define('DB_DATABASE', 'xxxxx');
 define('PDO_DSN', 'mysql:host=' . DB_SERVER . ';dbname=' . DB_DATABASE);
 
-// Administrator login information
-define('ADMIN_USERNAME', 'adminjobstackkingugo');
-define('ADMIN_PASSWORD', 'franc1smary0guej10f0r');
 
 define('SHORT_JOB_DESCRIPTION_LENGTH', 250);
 define('SHORT_ADMIN_POSTS_DESCRIPTION_LENGTH', 30);
